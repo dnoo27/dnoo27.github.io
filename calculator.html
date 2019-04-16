@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Calculate Financial Loss</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel = "stylesheet" type = "text/css" href = "style.css" />
+    </head>
+<body>
+<div class="container">
+<h2>Calculate the cost of financial distractions</h2>
+
+<p>Enter the number of employees at your organization to estimate the productivity cost</p>
+
+<button id="myBtn">Try it</button>
+<input id="myInput" placeholder="number of employees"></input>
+
+<!-- <div class="loader"></div> -->
+<div id="ps"style="display:none;"> 
+<p id="demo" class="animate-bottom" style="display:none;"></p>
+<p id="demo2"class="animate-bottom" style="display:none;"></p>
+<p id="demo3"class="animate-bottom" style="display:none;"></p>
+<p id="demo4"class="animate-bottom" style="display:none;"></p>
+</div>
+<div id ="theLoader" class="loader" style="display:none"></div>
+
+<!---<div>
+    <div id="percent" class="images"></div>
+    <div id="percentData" class="texts"></div>
+</div>-->
+
+<script>
+document.getElementById("myBtn").addEventListener("click", loaderIcon);
+
+
+function loaderIcon() {
+    document.getElementById("theLoader").style.display = "block";
+    setTimeout(displayDate,2000);
+}
+
+function displayDate() {
+   
+    document.getElementById("theLoader").style.display="none";
+  var people = document.getElementById("myInput").value;
+
+  //display the number of distracted people
+  var distracted = (people * .3);
+  let distractedAtWork = (distracted * .46);
+  let hoursLost = (distractedAtWork * 3 * 46);
+  console.log("numbers: " + distracted);
+  console.log(distractedAtWork);
+  console.log(hoursLost);
+  //document.getElementById("percent").innerHTML = "<img src='distracted.png'>";
+  //document.getElementById("percentData").innerHTML = distracted;
+
+
+  console.log(people);  
+
+  people = (people * .3 * .46 * 3 * 46 * 17.24).toFixed(2);
+  
+
+  console.log(people);
+
+
+  
+    //people.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //people.toLocaleString(undefined, { maximumFractionDigits: 2});
+    console.log(people);
+
+   
+    console.log(people);
+  
+  
+  
+
+
+  //document.getElementById("demo4").innerHTML = Date();
+  document.getElementById("demo4").innerHTML = "$" + people;
+
+
+  function thousands_separators(num)
+  {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  }
+
+  numFormatted = thousands_separators(people);
+  hoursFormatted = thousands_separators(hoursLost);
+  distractedFormatted = thousands_separators(distractedAtWork);
+  distracted = thousands_separators(distracted);
+  console.log(numFormatted);
+
+  //document.getElementById("ps").style.display="block";
+
+  setTimeout(runDemo1, 500);
+  setTimeout(runDemo2, 1500);
+  setTimeout(runDemo3, 2500);
+  setTimeout(runDemo4, 3500);
+
+  function runDemo1() {
+    document.getElementById("ps").style.display = "block";
+    document.getElementById("demo").style.display = "block";
+    document.getElementById("demo").innerHTML = distracted + " distracted employees";
+    console.log("demo 1");
+  }
+
+  function runDemo2() {
+    document.getElementById("demo2").style.display = "block";
+    document.getElementById("demo2").innerHTML = distractedFormatted + " employees spending 3+ hours/wk on finances at work";
+    console.log("demo 2");
+    }
+
+  function runDemo3() {
+    document.getElementById("demo3").style.display = "block";
+    document.getElementById("demo3").innerHTML = hoursFormatted + " hours lost";
+  }
+
+  function runDemo4() {
+    document.getElementById("demo4").style.display = "block";  
+    document.getElementById("demo4").innerHTML = "$" + numFormatted + " lost per year";
+  }
+  //document.getElementById("ps").style.display = "block";
+  //document.getElementById("demo").innerHTML = distracted + " distracted employees";
+  //document.getElementById("demo2").innerHTML = distractedFormatted + " employees spending 3+ hours/wk on finances at work";
+  //document.getElementById("demo3").innerHTML = hoursFormatted + " hours lost";
+  //document.getElementById("demo4").innerHTML = "$" + numFormatted + " lost per year";
+}
+</script>
+</div>
+</body>
+</html> 
