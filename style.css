@@ -41,3 +41,23 @@
     from{ bottom:-100px; opacity:0 } 
     to{ bottom:0; opacity:1 }
   }
+
+.card-body{
+
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.card-img-top {
+
+  padding: 10px;
+}
+
+.patua {
+  font-family: 'Patua One', cursive;
+}
+
+.fira {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.2em;
+}
