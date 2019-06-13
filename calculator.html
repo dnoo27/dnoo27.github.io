@@ -40,10 +40,14 @@
 
 <!--This is the language we need-->
 <h1 style="color:red" class="patua">The cost of financial distractions</h1>
-<p>Employers are increasingly recognizing their role in supporting their employees' financial wellbeing-as well as the potential savings and gains they can realize in doing so. </p>
-<p>Stress over income insecurity or financial precarity has a business cost: As more workers worry about finances, their productivity and performance suffer, with consequences for employers. What's worse, nearly half of all employees are stressed about finances at work, and more than 40% of all workers say that their level of stress about financial issues has increased over the past year (PwC, 2018. Employee Financial Wellness Survey: 2018 Results).</p>
+<p>Stress over income insecurity has a business cost: As more employees worry about finances, productivity and performance suffer which leads to expensive consequences for employers. </p>
+<!-- <p>Employers are increasingly recognizing their role in supporting their employees' financial wellbeing-as well as the potential savings and gains they can realize in doing so. </p> -->
+<p>This stress also takes a toll on staff. Half of all employees report they worry about their personal finances while on the job, and more than 40% say that their level of stress about financial issues has increased over the past year (PwC, 2018. Employee Financial Wellness Survey: 2018 Results).</p>
 
-<h5>Wonder what financial worry and precarity is costing your organization? </h5>
+<!-- <p>Stress over income insecurity or financial precarity has a business cost: As more workers worry about finances, their productivity and performance suffer, with consequences for employers. What's worse, nearly half of all employees are stressed about finances at work, and more than 40% of all workers say that their level of stress about financial issues has increased over the past year (PwC, 2018. Employee Financial Wellness Survey: 2018 Results).</p> -->
+<p>Employers have a role in supporting their employees' financial well-being, and <a href="https://filene.org/learn-something/reports">Filene’s research shows</a> there are economical benefits  in doing so, but it starts by understanding the impact of financial stress.</p>
+<!-- <h5>Wonder what financial worry and precarity is costing your organization? </h5> -->
+<h5>WHAT IS FINANCIAL STRESS COSTING YOUR ORGANIZATION?</h5>
 </br>  
 <h6>Enter the number of employees (FTE) at your organization to estimate the costs to productivity.</h6>
 
@@ -56,7 +60,10 @@
 <input id="myInput" placeholder=" number of employees"></input>
 <p id="warning" style="color:red;display:none;">Please enter a number above</p>
 </br></br>
-<h6>Enter your employees average hourly wage. If you do not know, the calculator will use the national average credit union employee hourly wage of $40.60/hour.</h6>
+<!-- <h6>Enter your employees average hourly wage. If you do not know, the calculator will use the national average credit union employee hourly wage of $40.60/hour.</h6> -->
+<h6>Enter the average FTE hourly wage and benefits. If left empty, the calculator will use the
+    national average credit union employee hourly wage and benefits of $40.60/hour.
+    </h6>
 <input id="avgwages"></input>
 <button id="myBtn" class="button is-primary is-outlined">Try it</button>
 <p id="warning2" style="color:red;display:none;">Please enter a number or leave the box empty</p>
@@ -206,8 +213,9 @@
   </div>
 
   <h1 style="color:red" class="patua">The cost of financial distractions</h1>
-<p>Employers are increasingly recognizing their role in supporting their employees' financial wellbeing-as well as the potential savings and gains they can realize in doing so. </p>
-<p>Stress over income insecurity or financial precarity has a business cost: As more workers worry about finances, their productivity and performance suffer, with consequences for employers. What's worse, nearly half of all employees are stressed about finances at work, and more than 40% of all workers say that their level of stress about financial issues has increased over the past year (PwC, 2018. Employee Financial Wellness Survey: 2018 Results).</p>
+  <p>Stress over income insecurity has a business cost: As more employees worry about finances, productivity and performance suffer which leads to expensive consequences for employers.</p>
+  <p>This stress also takes a toll on staff. Half of all employees report they worry about their personal finances while on the job, and more than 40% say that their level of stress about financial issues has increased over the past year (PwC, 2018. Employee Financial Wellness Survey: 2018 Results).</p>
+  <p>Employers have a role in supporting their employees' financial well-being, and <a href="https://filene.org/443">Filene's research shows</a> there are economical benefits  in doing so, but it starts by understanding the impact of financial stress.</p>
 
 <h5>Wonder what financial worry and precarity is costing your organization? </h5>
 </br>  
@@ -578,11 +586,20 @@ function saveAs(uri, filename) {
             }
         };
         margins = {
-            top: 80,
+            top: 40,
+            //top: 80,
             bottom: 60,
             left: 40,
             width: 522
         };
+
+
+        var rectX = 200, rectY = 200, rectW = 25, rectH = 25;
+        //pdf.rect(rectX, rectY, rectW, rectH, 'f');
+        //pdf.link(rectX, rectY, rectW, rectH, {url: 'https://www.filene.org/443'});
+
+        pdf.textWithLink("report now", rectX, rectY, {url: 'https://www.filene.org/learn-something'} );
+
         // all coords and widths are in jsPDF instance's declared units
         // 'inches' in this case
         pdf.fromHTML(
@@ -592,6 +609,8 @@ function saveAs(uri, filename) {
                 'width': margins.width, // max width of content on PDF
                 'elementHandlers': specialElementHandlers
             },
+
+            
 
             function (dispose) {
                 // dispose: object with X, Y of the last line add to the PDF 
