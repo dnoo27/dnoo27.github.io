@@ -262,12 +262,16 @@
 
   <div>
     <p>Filene footnote here</p>
+    <p id="cugen"> </p>
   </div>
 </div>
 
 <!--New dialog  Consider adding to the container to center. add an id to the <a> tag to link the download button-->
 
 <div id="downloadlink" style="margin:100px; display: none;" >
+  <span></span>
+  <h6>Enter your Credit Union below.</h6>
+  <input type="text" id="cuname" placeholder="">
   <p><a href="javascript:createPDF()">Download</a> your credit union's personalized opportunity loss assessment to lead research-backed conversations on strategies to increase employee financial wellness.</p>
 </div>
 
@@ -460,7 +464,7 @@ function displayDate() {
   function runDiv1() {
     document.getElementById("div1").style.display= "block";
     //document.getElementById("div1").class="animate-bottom";
-    document.getElementById("disemp").innerHTML = distracted + " distracted employees";
+    document.getElementById("disemp").innerHTML = distracted + "</br> The number of distracted employees at your credit union.</br>30% of employees are distracted. ";
 
     //add to pdf
     document.getElementById("pdf-testing").innerHtml = distracted + " distracted employees";
@@ -470,7 +474,7 @@ function displayDate() {
   function runDiv2() {
     document.getElementById("div2").style.display= "block";
     //document.getElementById("div1").class="animate-bottom";
-    document.getElementById("divwork").innerHTML = distractedFormatted + " employees spending 3+ hours/wk on finances at work";
+    document.getElementById("divwork").innerHTML = distractedFormatted + "</br> the number of employees that spend 3+ hours per week on finances while at work.</br>46% of distracted employees spend 3+ hours on finances at work";
 
     //add to pdf
     document.getElementById("pdf-text2").innerHTML = distractedFormatted + " employees spending 3+ hours/wk on finances at work";
@@ -484,7 +488,7 @@ function displayDate() {
   function runDiv3() {
     document.getElementById("div3").style.display= "block";
     //document.getElementById("div1").class="animate-bottom";
-    document.getElementById("divhours").innerHTML = hoursFormatted + " hours lost";
+    document.getElementById("divhours").innerHTML = hoursFormatted + "</br>The number of hours your organization loses per year when employees stress about finances.</br>3 hours a week x 46 work weeks/year per distracted employee.";
 
     //add to pdf
     document.getElementById("pdf-text3").innerHTML = hoursFormatted + " hours lost";
@@ -494,7 +498,7 @@ function displayDate() {
   function runDiv4() {
     document.getElementById("div4").style.display= "block";
     //document.getElementById("div1").class="animate-bottom";
-    document.getElementById("divmoney").innerHTML = "$" + numFormatted + " lost per year";
+    document.getElementById("divmoney").innerHTML = "$" + numFormatted + "</br>The financial loss your organization faces every year because of lost productivity.</br>Lost hours x average salary and benefits/hour";
 
     //add to pdf
     document.getElementById("pdf-text4").innerHTML = "$" + numFormatted + " lost per year";
@@ -579,6 +583,13 @@ function saveAs(uri, filename) {
 
     //function demoFromHTML() {
     function createPDF() {
+
+        //insert CU name into PDF 
+        var cuname = document.getElementById("cuname").value;
+       
+        document.getElementById("cugen").innerHTML = "This report generated for " + cuname;
+        
+
         var pdf = new jsPDF('p', 'pt', 'letter');
         // source can be HTML-formatted string, or a reference
         // to an actual DOM element from which the text will be scraped.
