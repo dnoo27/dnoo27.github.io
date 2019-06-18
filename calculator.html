@@ -112,19 +112,27 @@
   <div id="div1"class="col-md-5 animate-bottom" style="display:none;">
     <img src="FinancialCalculator-02.png" alt="" style="width: 100%; border: 2px solid lightslategray; border-radius: 15px;">
     <h4 id="disemp"style="text-align: center;">14 distracted employees</h4>
+    <h6 style="text-align: center;" id="disemp2"></h6>
+    <h6 style="text-align: center; font-style:italic;" id="disemp3"></h6>
   </div>
   <div id="div2" class="col-md-5 animate-bottom" style="display:none;">
     <img src="FinancialCalculator-03.png" alt="" style="width: 100%; border: 2px solid lightslategray; border-radius: 15px;">
     <h4 style="text-align: center;" id="divwork">6 employees spending 3+ hours/wk on finances at work </h4>
+    <h6 style="text-align: center;" id="divwork2"></h6>
+    <h6 style="text-align: center; font-style:italic;"id="divwork3"></h6>
   </div>
   <div id="div3"class="col-md-5 animate-bottom" style="display:none;">
       <img src="FinancialCalculator-04.png" alt="" style="width: 100%;border: 2px solid lightslategray; border-radius: 15px;">
       <h4 style="text-align: center;" id="divhours">857 hours lost</h4>
+      <h6 style="text-align: center;"id="divhours2"></h6>
+      <h6 style="text-align: center; font-style:italic;" id="divhours3"></h6>
     </div>
     <div id="div4"class="col-md-5 animate-bottom" style="display:none;">
       <!-- <img src="FinancialCalculator-01.png" alt="" style="width: 100%;border: 2px solid lightslategray; border-radius: 15px;"> -->
       <img src="FinancialCalculator-01.png" alt="" style="width: 100%;border: 2px solid lightslategray; border-radius: 15px;">
       <h4 style="text-align: center;" id="divmoney">$34,793.39 lost per year</h4>
+      <h6 style="text-align: center;" id="divmoney2"></h6>
+      <h6 style="text-align: center; font-style: italic;"id="divmoney3"></h6>
     </div>
 </div>
 </div>
@@ -464,8 +472,9 @@ function displayDate() {
   function runDiv1() {
     document.getElementById("div1").style.display= "block";
     //document.getElementById("div1").class="animate-bottom";
-    document.getElementById("disemp").innerHTML = distracted + "</br> The number of distracted employees at your credit union.</br>30% of employees are distracted. ";
-
+    document.getElementById("disemp").innerHTML = distracted;
+    document.getElementById("disemp2").innerHTML = "The number of distracted employees at your credit union."
+    document.getElementById("disemp3").innerHTML = "30% of employees are distracted"
     //add to pdf
     document.getElementById("pdf-testing").innerHtml = distracted + " distracted employees";
     console.log("testing pdf and adding " + distracted + " distracted employees" );
@@ -474,8 +483,9 @@ function displayDate() {
   function runDiv2() {
     document.getElementById("div2").style.display= "block";
     //document.getElementById("div1").class="animate-bottom";
-    document.getElementById("divwork").innerHTML = distractedFormatted + "</br> the number of employees that spend 3+ hours per week on finances while at work.</br>46% of distracted employees spend 3+ hours on finances at work";
-
+    document.getElementById("divwork").innerHTML = distractedFormatted;
+    document.getElementById("divwork2").innerHTML = "The number of employees that spend 3+ hours per week on finances while at work."
+    document.getElementById("divwork3").innerHTML = "46% of distracted employees spend 3+ hours on finances at work"
     //add to pdf
     document.getElementById("pdf-text2").innerHTML = distractedFormatted + " employees spending 3+ hours/wk on finances at work";
 
@@ -488,8 +498,9 @@ function displayDate() {
   function runDiv3() {
     document.getElementById("div3").style.display= "block";
     //document.getElementById("div1").class="animate-bottom";
-    document.getElementById("divhours").innerHTML = hoursFormatted + "</br>The number of hours your organization loses per year when employees stress about finances.</br>3 hours a week x 46 work weeks/year per distracted employee.";
-
+    document.getElementById("divhours").innerHTML = hoursFormatted;
+    document.getElementById("divhours2").innerHTML = "The number of hours your organization loses per year when employees stress about finances."
+    document.getElementById("divhours3").innerHTML = " 3 hours a week x 46 work weeks/year per distracted employee"
     //add to pdf
     document.getElementById("pdf-text3").innerHTML = hoursFormatted + " hours lost";
 
@@ -498,8 +509,9 @@ function displayDate() {
   function runDiv4() {
     document.getElementById("div4").style.display= "block";
     //document.getElementById("div1").class="animate-bottom";
-    document.getElementById("divmoney").innerHTML = "$" + numFormatted + "</br>The financial loss your organization faces every year because of lost productivity.</br>Lost hours x average salary and benefits/hour";
-
+    document.getElementById("divmoney").innerHTML = "$" + numFormatted;
+    document.getElementById("divmoney2").innerHTML = "The financial loss your organization faces every year because of lost productivity."
+    document.getElementById("divmoney3").innerHTML = "lost hours x average salary and benfits/hour"
     //add to pdf
     document.getElementById("pdf-text4").innerHTML = "$" + numFormatted + " lost per year";
 
