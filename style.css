@@ -54,10 +54,33 @@
 }
 
 .patua {
-  font-family: 'Patua One', cursive;
+  /* font-family: 'Patua One', cursive; */
+ 
+    font-family: Georgia; 
+    font-weight: 600;
+    /* letter-spacing: 2px; */
+  
 }
 
 .fira {
   font-family: 'Fira Sans', sans-serif;
   font-size: 1.2em;
+}
+
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+
+}
+
+h6 {
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+}
+
+h5 {
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
 }
