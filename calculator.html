@@ -336,7 +336,7 @@ function loadCards() {
 
 
 function loaderIcon() {
-    console.log("here it is" + document.getElementById("myInput").value)
+    //console.log("here it is" + document.getElementById("myInput").value)
     let theInput = document.getElementById("myInput").value;
     let secondInput = document.getElementById("avgwages").value;
 
@@ -383,7 +383,7 @@ function displayDate() {
   var people = document.getElementById("myInput").value;
   var userEnteredWages = document.getElementById("avgwages").value;
 
-  console.log("Average wages = " + userEnteredWages);
+  //console.log("Average wages = " + userEnteredWages);
 
   //display the number of distracted people
   var distracted = (people * .3);
@@ -396,14 +396,14 @@ function displayDate() {
   if (distractedAtWork < 1) {
     distractedAtWork = 1;
   };
-  console.log("numbers: " + distracted);
-  console.log(distractedAtWork);
-  console.log(hoursLost);
+  //console.log("numbers: " + distracted);
+  //console.log(distractedAtWork);
+  //console.log(hoursLost);
   //document.getElementById("percent").innerHTML = "<img src='distracted.png'>";
   //document.getElementById("percentData").innerHTML = distracted;
 
 
-  console.log(people);  
+  //console.log(people);  
   var wageNumber = 40.60;
 
   if (userEnteredWages > 0 ) {
@@ -417,16 +417,16 @@ function displayDate() {
 
   people = (people * .3 * .46 * 3 * 46 * wageNumber).toFixed(0);
 
-  console.log(people);
+  //console.log(people);
 
 
   
     //people.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     //people.toLocaleString(undefined, { maximumFractionDigits: 2});
-    console.log(people);
+    //console.log(people);
 
    
-    console.log(people);
+    //console.log(people);
   
   
   
@@ -451,7 +451,7 @@ function displayDate() {
   distracted = Math.round(distracted);
   distracted = thousands_separators(distracted);
   
-  console.log(numFormatted);
+  //console.log(numFormatted);
 
   //document.getElementById("ps").style.display="block";
 
@@ -468,7 +468,7 @@ function displayDate() {
     document.getElementById("ps").style.display = "block";
     document.getElementById("demo").style.display = "block";
     document.getElementById("demo").innerHTML = distracted + " distracted employees";
-    console.log("demo 1");
+    //console.log("demo 1");
 
     
   }
@@ -483,7 +483,7 @@ function displayDate() {
     //add to pdf
     //for somer eason below doesn't work...
     //document.getElementById("pdf-testing").innerHtml = distracted + "-- the number of distracted employees at your credit union. 30% of employees are distracted";
-    console.log("testing pdf and adding " + distracted + " distracted employees" );
+    //console.log("testing pdf and adding " + distracted + " distracted employees" );
   }
 
   function runDiv2() {
@@ -531,7 +531,7 @@ function displayDate() {
     document.getElementById("demo2").style.display = "block";
     //used math.Round() before 
     document.getElementById("demo2").innerHTML = distractedFormatted + " employees spending 3+ hours/wk on finances at work";
-    console.log("demo 2");
+    //console.log("demo 2");
     }
 
   function runDemo3() {
@@ -669,12 +669,12 @@ function saveAs(uri, filename) {
     document.addEventListener('keydown', logKey);
 
 function logKey(e) {
-  console.log(e.code);
+  //console.log(e.code);
   if (e.code == "Enter" || e.code == "NumpadEnter") {
     loaderIcon();
   }
   else {
-    console.log("not enter");
+    //console.log("not enter");
   }
 }
 
