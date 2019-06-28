@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 </head>
 <body>
     
@@ -13,8 +14,43 @@
         <p id ="watergage"></p>
     </div>
 
-
+    <!-- third try -->
     <script>
+            var serviceEndpoint = 'https://waterservices.usgs.gov/nwis/iv/?format=json&sites=05428000&parameterCd=00060,00065&siteStatus=all';
+            $.ajax({
+              type: 'GET', 
+              url: serviceEndpoint,
+              dataType: 'json',
+              contentType: 'json',
+              headers: { 'api-key':'myKey' }
+            });
+
+    </script>
+
+    <!-- 2nd try -->
+    <!-- <script>
+            function getCORS(url, success) {
+
+                var url = "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=05428000&parameterCd=00060,00065&siteStatus=all";
+                var xhr = new XMLHttpRequest();
+                if (!('withCredentials' in xhr)) xhr = new XDomainRequest(); // fix IE8/9
+                xhr.open('GET', url);
+                xhr.setRequestHeader("Content-type", "application/json");
+                xhr.onload = success;
+                xhr.send();
+                return xhr;
+            }
+            
+            // example request
+            getCORS('https://waterservices.usgs.gov/nwis/iv/?format=json&sites=05428000&parameterCd=00060,00065&siteStatus=all', function(request){
+                var response = request.currentTarget.response || request.target.responseText;
+                console.log(response);
+            });
+
+    </script> -->
+
+<!-- first try -->
+    <!-- <script>
             var xmlhttp = new XMLHttpRequest();
             var url = "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=05428000&parameterCd=00060,00065&siteStatus=all";
             
@@ -27,6 +63,8 @@
             };
             
             xmlhttp.open("GET", url, true);
+            xmlhttp.setRequestHeader("Content-type", "application/json");
+
             xmlhttp.send();
             
             function myFunction(arr) {
@@ -50,6 +88,6 @@
             //  document.getElementById("id01").innerHTML = out;
             //}
             
-            </script>
+            </script> -->
 </body>
 </html>
