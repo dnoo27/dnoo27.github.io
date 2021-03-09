@@ -1,0 +1,43 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.item {
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  padding-top: 75px;
+  background: #ccc;
+  text-align: center;
+  color: #FFF;
+  font-size: 2em;
+}
+
+
+.img {
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+
+    background: #ccc;
+    text-align: center;
+    color: #FFF;
+    font-size: 3em;
+
+}
+
+
+//testing rows
+// .column {
+//     float: left;
+//     width: 50%;
+//   }
+  
+//   /* Clear floats after the columns */
+//   .row:after {
+//     content: "";
+//     display: table;
+//     clear: both;
+//   }
+
